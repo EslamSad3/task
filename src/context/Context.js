@@ -43,7 +43,7 @@ export function ContextProvider({ children }) {
   const [LoadedData, setData] = useState([]);
 
   async function getData() {
-    const data = await axios.get('http://localhost:8000/api/get');
+    const data = await axios.get('https://taskback-1pxp.onrender.com/api/get');
     console.log(data);
     setData(data.data);
   }
