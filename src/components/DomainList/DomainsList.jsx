@@ -43,7 +43,7 @@ const handleSort = (property) => {
   const sortedRows = data.sort(
     compareValues(sortProperty, sortDirection)
   );
-  console.log(sortedRows)
+
   
   return (
     <>
@@ -95,7 +95,7 @@ const handleSort = (property) => {
                 overflow: 'hidden',
               }}
             >
-              {data.map((row) => (
+              {sortedRows.map((row) => (
                 <TableRow
                   // hover
                   key={row.id}

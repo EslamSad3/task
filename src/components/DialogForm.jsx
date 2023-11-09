@@ -19,6 +19,7 @@ function DialogForm() {
     formState: { errors },
   } = useForm();
 
+
   const { open, handleClose } = useContext(DomainContext);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -69,7 +70,7 @@ function DialogForm() {
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <form
                 width={805}
-                onSubmit={handleSubmit((data) => console.log(data))}
+                onSubmit={handleSubmit((errors) =>   console.log(errors))}
               >
                 {/* name */}
                 <Box
@@ -175,46 +176,46 @@ function DialogForm() {
                 </Box>
                 {/* address1 */}
                 <Box
-                    width={'100%'}
-                    display={'flex'}
-                    justifyContent={'space-between'}
-                    flexDirection={'column'}
-                    alignItems={'left'}
-                  >
-                    <label htmlFor="address1">address1</label>
-                    <input
-                      {...register('address1', { required: true })}
-                      type="text"
-                      id="address1"
-                      placeholder="Enter address1"
-                    />
-                    {errors.address1 && (
-                      <Typography color={'error'}>
-                        address1 is required.
-                      </Typography>
-                    )}
-                  </Box>
+                  width={'100%'}
+                  display={'flex'}
+                  justifyContent={'space-between'}
+                  flexDirection={'column'}
+                  alignItems={'left'}
+                >
+                  <label htmlFor="address1">address1</label>
+                  <input
+                    {...register('address1', { required: true })}
+                    type="text"
+                    id="address1"
+                    placeholder="Enter address1"
+                  />
+                  {errors.address1 && (
+                    <Typography color={'error'}>
+                      address1 is required.
+                    </Typography>
+                  )}
+                </Box>
                 {/* address2 */}
                 <Box
-                    width={'100%'}
-                    display={'flex'}
-                    justifyContent={'space-between'}
-                    flexDirection={'column'}
-                    alignItems={'left'}
-                  >
-                    <label htmlFor="address2">address2</label>
-                    <input
-                      {...register('address2', { required: true })}
-                      type="text"
-                      id="address2"
-                      placeholder="Enter address2"
-                    />
-                    {errors.address2 && (
-                      <Typography color={'error'}>
-                        address2 is required.
-                      </Typography>
-                    )}
-                  </Box>
+                  width={'100%'}
+                  display={'flex'}
+                  justifyContent={'space-between'}
+                  flexDirection={'column'}
+                  alignItems={'left'}
+                >
+                  <label htmlFor="address2">address2</label>
+                  <input
+                    {...register('address2', { required: true })}
+                    type="text"
+                    id="address2"
+                    placeholder="Enter address2"
+                  />
+                  {errors.address2 && (
+                    <Typography color={'error'}>
+                      address2 is required.
+                    </Typography>
+                  )}
+                </Box>
 
                 <Box
                   width={600}
@@ -294,7 +295,9 @@ function DialogForm() {
                 <DialogActions>
                   <Button
                     type="submit"
-                    onClick={errors.length > 0 ? console.log(errors) : handleClose}
+                    onClick={
+                      errors ? console.log(errors) : handleClose
+                    }
                     variant="contained"
                     color="success"
                     sx={{
