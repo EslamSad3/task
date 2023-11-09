@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -66,229 +66,239 @@ function DialogForm() {
             with your registration
           </DialogContentText>
           <DialogContentText>
-            <Box  sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <form
                 width={805}
                 onSubmit={handleSubmit((data) => console.log(data))}
               >
-{/* name */}
-                 <Box
-                 width={600}
+                {/* name */}
+                <Box
+                  width={600}
                   display={'flex'}
-                  justifyContent='space-between'
+                  justifyContent="space-between"
                   alignItems={'center'}
                 >
+                  {/* fname */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
                     justifyContent={'space-between'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
-                    <label htmlFor="fname" >First Name</label>
-                    <input type='text'
+                    <label htmlFor="fname">First Name</label>
+                    <input
+                      {...register('fname', { required: true })}
+                      type="text"
                       id="fname"
                       placeholder="Enter First Name"
                     />
+                    {errors.fname && (
+                      <Typography color={'error'}>
+                        First name is required.
+                      </Typography>
+                    )}
                   </Box>
-                  
+                  {/* lname */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
                     justifyContent={'center'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
                     <label htmlFor="lname">Last Name</label>
-                    <input type='text'
+                    <input
+                      {...register('lname', { required: true })}
+                      type="text"
                       id="lname"
                       placeholder="Enter Last Name"
                     />
+                    {errors.lname && (
+                      <Typography color={'error'}>
+                        Last name is required.
+                      </Typography>
+                    )}
                   </Box>
                 </Box>
 
-
+                {/* Company */}
                 <Box
-                 width={600}
+                  width={600}
                   display={'flex'}
-                  justifyContent='space-between'
+                  justifyContent="space-between"
                   alignItems={'center'}
                   mb={2}
                 >
+                  {/* Company */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
                     justifyContent={'space-between'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
-                    <label htmlFor="company" >company Name</label>
-                    <input type='text'
-                      id="company"
-                      placeholder="Enter Company Name"
+                    <label htmlFor="Company">Company Name</label>
+                    <input
+                      {...register('Company', { required: true })}
+                      type="text"
+                      id="Company"
+                      placeholder="Enter Company"
                     />
+                    {errors.email && (
+                      <Typography color={'error'}>
+                        Company is required.
+                      </Typography>
+                    )}
                   </Box>
-                  
+                  {/* email */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
-                    justifyContent={'center'}
+                    justifyContent={'space-between'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
                     <label htmlFor="email">Email</label>
-                    <input type='email'
+                    <input
+                      {...register('email', { required: true })}
+                      type="text"
                       id="email"
-                      placeholder="Enter Email"
+                      placeholder="Enter email"
                     />
+                    {errors.email && (
+                      <Typography color={'error'}>
+                        email is required.
+                      </Typography>
+                    )}
                   </Box>
                 </Box>
-
+                {/* address1 */}
                 <Box
-                  width={"100%"}
+                    width={'100%'}
                     display={'flex'}
                     justifyContent={'space-between'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
-                    <label htmlFor="addres1" >Address Line 1</label>
-                    <input type='text'
-                      id="addres1"
-                      placeholder="Enter Address Line 1"
+                    <label htmlFor="address1">address1</label>
+                    <input
+                      {...register('address1', { required: true })}
+                      type="text"
+                      id="address1"
+                      placeholder="Enter address1"
                     />
+                    {errors.address1 && (
+                      <Typography color={'error'}>
+                        address1 is required.
+                      </Typography>
+                    )}
                   </Box>
+                {/* address2 */}
                 <Box
-                  width={"100%"}
+                    width={'100%'}
                     display={'flex'}
                     justifyContent={'space-between'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
-                    <label htmlFor="address2" >Address Line 2</label>
-                    <input type='text'
+                    <label htmlFor="address2">address2</label>
+                    <input
+                      {...register('address2', { required: true })}
+                      type="text"
                       id="address2"
-                      placeholder="Enter Address Line 2"
+                      placeholder="Enter address2"
                     />
+                    {errors.address2 && (
+                      <Typography color={'error'}>
+                        address2 is required.
+                      </Typography>
+                    )}
                   </Box>
 
-
-                 <Box
-                 width={600}
+                <Box
+                  width={600}
                   display={'flex'}
-                  justifyContent='space-between'
+                  justifyContent="space-between"
                   alignItems={'center'}
                 >
+                  {/* city */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
                     justifyContent={'space-between'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
-                    <label htmlFor="city" >City</label>
-                    <input type='text'
-                      id="city"
-                      placeholder="Enter City"
-                    />
+                    <label htmlFor="city">City</label>
+                    <input type="text" id="city" placeholder="Enter City" />
                   </Box>
-                  
+                  {/* state */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
                     justifyContent={'center'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
                     <label htmlFor="state">State</label>
-                    <input type='text'
-                      id="state"
-                      placeholder="Enter State"
-                    />
+                    <input type="text" id="state" placeholder="Enter State" />
                   </Box>
                 </Box>
 
-
                 <Box
-                 width={600}
+                  width={600}
                   display={'flex'}
-                  justifyContent='space-between'
+                  justifyContent="space-between"
                   alignItems={'center'}
                 >
+                  {/* zip */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
                     justifyContent={'space-between'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
-                    <label htmlFor="zcode" >Zip Code</label>
-                    <input type='text'
+                    <label htmlFor="zcode">Zip Code</label>
+                    <input
+                      type="text"
                       id="zcode"
                       placeholder="Enter Zip Code"
                     />
                   </Box>
-                  
+                  {/* phone */}
                   <Box
-                  width={"45%"}
+                    width={'45%'}
                     display={'flex'}
                     justifyContent={'center'}
                     flexDirection={'column'}
                     alignItems={'left'}
                   >
                     <label htmlFor="phone">Phone</label>
-                    <input type='text'
-                      id="phone"
-                      placeholder="Enter Phone"
-                    />
+                    <input type="text" id="phone" placeholder="Enter Phone" />
                   </Box>
                 </Box>
-
-
+                {/* country */}
                 <Box
-                  width={"100%"}
-                    display={'flex'}
-                    justifyContent={'space-between'}
-                    flexDirection={'column'}
-                    alignItems={'left'}
-                  >
-                    <label htmlFor="country" >Country</label>
-                    <input type='text'
-                      id="country"
-                      placeholder="Enter Country"
-                    />
-                  </Box>
+                  width={'100%'}
+                  display={'flex'}
+                  justifyContent={'space-between'}
+                  flexDirection={'column'}
+                  alignItems={'left'}
+                >
+                  <label htmlFor="country">Country</label>
+                  <input type="text" id="country" placeholder="Enter Country" />
+                </Box>
 
-
-                {/* <input {...register('firstName')} />
-                <input {...register('lastName', { required: true })} />
-                {errors.lastName && (
-                  <Typography color={'error'}>
-                    Last name is required.
-                  </Typography>
-                )}
-                <input {...register('age', { pattern: /\d+/ })} /> */}
-                {/* {errors.age && (
-                  <Typography color={'error'}>
-                    Please enter number for age.
-                  </Typography>
-                )} */}
-
-
-
-
-
-
-
-
-
-                <DialogActions >
+                <DialogActions>
                   <Button
                     type="submit"
-                    onClick={handleClose}
+                    onClick={errors.length > 0 ? console.log(errors) : handleClose}
                     variant="contained"
                     color="success"
                     sx={{
-                      m:"auto",
+                      m: 'auto',
                       borderRadius: '20px',
                       fonSize: '16px',
                       fontWeight: 500,
