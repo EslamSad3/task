@@ -1,0 +1,109 @@
+{
+    "domains":[
+        {
+            "id": "87695",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "87696",
+            "price": 18,
+            "status": "Running",
+            "createdAt":"09 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "87697",
+            "price": 19,
+            "status": "Will Expire",
+            "createdAt":"10 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "87650",
+            "price": 55,
+            "status": "Running",
+            "createdAt":"12 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "58972",
+            "price": 15,
+            "status": "Expired",
+            "createdAt":"01 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "25365",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "14258",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "58896",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "45987",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "02365",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "98654",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "02504",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "85967",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "45985",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        },
+        {
+            "id": "20569",
+            "price": 15,
+            "status": "Running",
+            "createdAt":"08 Nov,2023",
+            "action":"Show Details"
+        }
+    ]
+}
