@@ -296,7 +296,7 @@ function DialogForm() {
                   <Button
                     type="submit"
                     onClick={
-                      errors ? console.log(errors) : handleClose
+                      Object.keys(errors) != 0 ? console.log(errors) : handleClose
                     }
                     variant="contained"
                     color="success"
