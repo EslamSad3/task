@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext ,useEffect} from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -13,17 +13,25 @@ import { useForm } from 'react-hook-form';
 import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
 
 function DialogForm() {
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  
 
+  console.log(errors)
   const { open, handleClose } = useContext(DomainContext);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
+
+  useEffect(() => {
+    console.log(errors)
+  }, [errors])
+  
   return (
     <React.Fragment>
       <Dialog
@@ -93,6 +101,7 @@ function DialogForm() {
                       type="text"
                       id="fname"
                       placeholder="Enter First Name"
+                      aria-invalid={errors.fname ? "true" : "false"}
                     />
                     {errors.fname && (
                       <Typography color={'error'}>

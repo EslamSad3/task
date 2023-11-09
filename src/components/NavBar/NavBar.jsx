@@ -9,7 +9,7 @@ function NavBar() {
   
   return (
     <AppBar
-      position=""
+      position="sticky"
       sx={{
         display: 'flex',
         width: 'calc(100% - 75px)',
